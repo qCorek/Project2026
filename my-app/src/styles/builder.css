@@ -1,0 +1,464 @@
+/* =====================================================
+   DESIGN TOKENS
+===================================================== */
+
+:root {
+  --base: #0b0b12;
+
+  --surface: rgba(19, 19, 28, .88);
+  --surface-2: rgba(24, 24, 36, .78);
+  --surface-3: rgba(32, 32, 46, .9);
+
+  --border: rgba(255,255,255,.06);
+  --border-strong: rgba(255,255,255,.12);
+
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+
+  --primary: #7c3aed;
+  --primary-2: #9f67ff;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 3px 10px rgba(0,0,0,.25);
+  --shadow-md: 0 12px 34px rgba(0,0,0,.35);
+  --shadow-lg: 0 30px 80px rgba(0,0,0,.55);
+
+  --blur: blur(14px);
+
+  --t: 140ms cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* =====================================================
+   PAGE BASE
+===================================================== */
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 500px at 20% -10%, #1a1630 0%, transparent 70%),
+    var(--base);
+
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+
+/* =====================================================
+   MAIN CARD (centered tool panel)
+===================================================== */
+
+.builder-card {
+
+
+
+    max-width: 680px;      /* was 760px */
+  margin: 40px auto;     /* was 80px auto */
+  padding: 28px;         /* was 36px */
+  gap: 22px;             /* was 32px */
+
+
+
+
+  display: flex;
+  flex-direction: column;
+
+
+
+  background: rgba(20,20,30,.88);
+  backdrop-filter: blur(16px);
+
+  border-radius: 22px;
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.builder-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+  margin: 0;
+}
+
+.builder-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+
+/* =====================================================
+   SECTIONS (glass cards)
+===================================================== */
+
+.builder-section {
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;         /* was 28px */
+  gap: 14px;             /* was 20px */
+
+  background: var(--surface);
+  backdrop-filter: var(--blur);
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-md);
+
+  transition: var(--t);
+}
+
+.builder-section:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+}
+
+.builder-section h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+
+/* =====================================================
+   DROP ZONE
+===================================================== */
+
+.drop-zone {
+  padding: 44px 22px;    /* was 64px 28px */
+  font-size: 13px;       /* optional */
+
+
+
+  border-radius: var(--radius-md);
+
+  background: var(--surface-2);
+  border: 1px dashed var(--border);
+
+  text-align: center;
+  cursor: pointer;
+
+  color: var(--text-muted);
+
+  transition: var(--t);
+}
+
+.drop-zone:hover {
+  background: var(--surface-3);
+  border-color: var(--primary);
+  color: white;
+
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px var(--primary), 0 10px 26px rgba(124,58,237,.25);
+}
+
+
+/* =====================================================
+   OPTIONS LIST
+===================================================== */
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+
+/* =====================================================
+   SWITCH
+===================================================== */
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 14px;
+}
+
+.switch-row input {
+  display: none;
+}
+
+.switch {
+  width: 46px;
+  height: 24px;
+
+  background: var(--surface-3);
+  border-radius: 999px;
+  border: 1px solid var(--border);
+
+  position: relative;
+  transition: var(--t);
+}
+
+.switch::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+
+  background: white;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 2.5px;
+  left: 3px;
+
+  transition: var(--t);
+}
+
+.switch-row input:checked + .switch {
+  background: var(--primary);
+  box-shadow: 0 0 12px rgba(124,58,237,.6);
+}
+
+.switch-row input:checked + .switch::after {
+  transform: translateX(20px);
+}
+
+
+/* =====================================================
+   BUILD ROW
+===================================================== */
+
+.compile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 22px;
+  margin-top: 4px;
+}
+
+.compile-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+/* =====================================================
+   SEGMENTED ARCH
+===================================================== */
+
+.arch-toggle {
+  display: flex;
+  gap: 4px;
+
+  background: var(--surface-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+
+  padding: 4px;
+}
+
+.arch-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+
+  transition: var(--t);
+}
+
+.arch-btn:hover {
+  background: var(--surface-3);
+  color: white;
+}
+
+.arch-btn.active {
+  background: var(--surface);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.arch-btn input {
+  display: none;
+}
+
+
+/* =====================================================
+   CUSTOM SELECT
+===================================================== */
+
+.custom-select {
+  position: relative;
+  font-size: 13px;
+}
+
+.select-trigger {
+  padding: 9px 14px;
+
+  border-radius: var(--radius-md);
+
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+
+  cursor: pointer;
+  transition: var(--t);
+}
+
+.select-trigger:hover {
+  border-color: var(--primary);
+}
+
+.select-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-md);
+}
+
+.select-menu div {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.select-menu div:hover {
+  background: var(--surface-3);
+}
+
+
+/* =====================================================
+   CTA BUTTON
+===================================================== */
+
+.compile-btn {
+  width: 100%;
+  padding: 16px 0;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border-radius: 14px;
+  border: none;
+
+  color: white;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+
+  transition: var(--t);
+}
+
+.compile-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(124,58,237,.45);
+}
+
+.compile-btn:active {
+  transform: translateY(0);
+}
+
+.compile-btn:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   CONSOLE
+===================================================== */
+
+.builder-console {
+  margin-top: 16px;      /* was 26px */
+
+  height: 180px;         /* was 240px */
+
+  padding: 14px;         /* was 18px */
+
+  background: #0a0a12;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.02);
+
+  overflow-y: auto;
+
+  font-family: ui-monospace, monospace;
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+/* =====================================================
+   LOG COLORS
+===================================================== */
+
+.log { opacity: .9; }
+.log.info { color: #cbd5e1; }
+.log.success { color: #22c55e; }
+.log.error { color: #ef4444; }
+
+
+
+/* =========================================
+   BUILDER PAGE FADE
+========================================= */
+
+.builder-card {
+
+    max-height: calc(100vh - 60px);
+  overflow: hidden;
+
+
+  
+  animation: builderFade .28s cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
+}
+
+@keyframes builderFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* =========================================
+   HIDE CONSOLE SCROLLBAR (builder only)
+========================================= */
+
+.builder-console {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+
+.builder-console::-webkit-scrollbar {
+  display: none;                /* Chrome/Safari */
+}
+
+.balance-badge.low {
+  border-color: rgba(239,68,68,.35);
+  box-shadow: 0 0 0 1px rgba(239,68,68,.25);
+}

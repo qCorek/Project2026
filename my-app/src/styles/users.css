@@ -1,0 +1,114 @@
+/* =====================================================
+   USERS CARD (more breathing room)
+===================================================== */
+
+.users-card {
+  padding: 32px 40px;   /* ← BIGGER */
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.users-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 26px;
+}
+
+.users-top h2 {
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.count-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  font-size: 14px;
+}
+
+
+/* header row */
+.users-table thead th {
+  text-align: left;
+
+  padding: 14px 22px;  /* ← more spacing */
+
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* rows */
+.users-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: var(--transition);
+}
+
+.users-table tbody tr:hover {
+  background: var(--surface-2);
+}
+
+
+/* cells */
+.users-table td {
+  padding: 18px 22px;  /* ← MUCH larger */
+}
+
+
+/* index */
+.index {
+  width: 60px;
+  color: var(--text-muted);
+}
+
+
+/* username */
+.username {
+  font-weight: 500;
+}
+
+
+/* date */
+.date {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+
+/* admin badge */
+.role-badge {
+  margin-left: 12px;
+  padding: 4px 10px;
+
+  font-size: 11px;
+  border-radius: 999px;
+
+  background: var(--primary-soft);
+  color: var(--primary);
+}

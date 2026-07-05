@@ -1,0 +1,147 @@
+/* =========================================
+   WRAPPER
+========================================= */
+
+.updates-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* =========================================
+   UPDATE CARD
+========================================= */
+
+.update-block {
+  background: var(--surface);
+
+  padding: 22px;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: .15s ease;
+}
+
+.update-block:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================
+   HEADER (title + date row)
+========================================= */
+
+.update-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.update-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.update-date {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+
+/* =========================================
+   BODY TEXT
+========================================= */
+
+.update-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+
+/* =========================================
+   CHANGE LIST
+========================================= */
+
+.update-list {
+  margin-top: 10px;
+  padding-left: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.update-list li {
+  font-size: 16px;      /* bigger */
+  font-weight: 500;     /* slightly stronger */
+  line-height: 1.7;
+  color: var(--text);   /* not muted anymore */
+}
+
+
+/* =========================================
+   VERSION BADGE (nice polish)
+========================================= */
+
+.update-badge {
+  display: inline-block;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 4px 8px;
+
+  border-radius: 999px;
+
+  background: rgba(99,102,241,.15);
+  color: var(--primary);
+
+  margin-right: 8px;
+}
+.update-version {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.update-block {
+  padding: 28px;
+}
+
+
+
+.updates-wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
