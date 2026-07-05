@@ -1,0 +1,34 @@
+1. Zet de `api`-map in `htdocs`.
+
+2. Importeer de database vanuit de map `DatabaseSQL`.
+
+3. Ga naar de map `my-app`.
+
+4. Open CMD in deze map.
+
+5. Voer dit commando uit:
+
+```bash
+npm run dev
+```
+
+
+
+
+
+
+
+
+
+\Project\Test_Applicaties\TestApplicatie.exe
+
+
+Gebruik TestApplicatie.exe als input in het tabblad Builder. TestApplicatie.exe zit in \Project\Test_Applicaties
+
+Kies de gewenste instellingen en klik op Compile.
+
+Daarna wordt er automatisch een download gestart. Dit bestand is de geobfusceerde versie van de originele input. Met dnSpy kunt u de originele en geobfusceerde versie vergelijken en de verschillen bekijken.
+
+
+
+bekijk het screenshot mapje voor het test resultaten 
